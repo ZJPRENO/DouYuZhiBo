@@ -11,27 +11,29 @@ private let kTitleViewH:CGFloat = 40
 
 class HomeViewController: UIViewController {
 
+	let titles = ["推荐","游戏","娱乐","趣玩"]
 	//	MARK:懒加载
 	private lazy var pageTitleView:PageTitleView = { [weak self] in
 		let titlesFrame = CGRect(x: 0, y: TOP_HEIGHT, width: kScreenW, height: kTitleViewH)
-		let titles = ["推荐","游戏","娱乐","趣玩"]
+
 		let titleView = PageTitleView(frame: titlesFrame, titles: titles)
 		titleView.delegate = self
 		//		titleView.backgroundColor = .red
 		return titleView
 	}()
-	private lazy var pageContentView:PageContentView = {[weak self] in
+	private lazy var pageContentView:PageContentView = { [weak self] in
 		let contentH:CGFloat = kScreenH - TOP_HEIGHT - BOTTOM_HEIGH - kTitleViewH
 		let contentFrame = CGRect(x: 0, y: TOP_HEIGHT + kTitleViewH, width: kScreenW, height: contentH)
 
 		var childVcs = [UIViewController]()
-		for _ in 0..<4 {
+		for _ in 0..<titles.count {
 			let vc = UIViewController()
 			vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
 			childVcs.append(vc)
 
 		}
 		let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentController: self)
+		contentView.delegate = self
 		return contentView
 	}()
 
@@ -107,5 +109,10 @@ extension HomeViewController:PageTitleViewDelegate {
 		print("\(index)")
 		pageContentView.setCurrentIndex(currentIndex: index)
 
+	}
+}
+extension HomeViewController:PageContentViewDelegate{
+	func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+		pageTitleView.setTitleWithProgress(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
 	}
 }
