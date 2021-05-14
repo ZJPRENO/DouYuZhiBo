@@ -24,6 +24,13 @@
 		A2302056264A858F00913A50 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2302055264A858F00913A50 /* Common.swift */; };
 		A2302058264CD00700913A50 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2302057264CD00700913A50 /* PageContentView.swift */; };
 		A230205A264CD2C600913A50 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2302059264CD2C600913A50 /* UIColor-Extension.swift */; };
+		A230205C264E48A000913A50 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230205B264E48A000913A50 /* RecommendViewController.swift */; };
+		A230205F264E606700913A50 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230205D264E606600913A50 /* CollectionHeaderView.swift */; };
+		A2302060264E606700913A50 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A230205E264E606600913A50 /* CollectionHeaderView.xib */; };
+		A2302065264E6CE500913A50 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2302063264E6CE500913A50 /* CollectionViewCell.swift */; };
+		A2302066264E6CE500913A50 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2302064264E6CE500913A50 /* CollectionViewCell.xib */; };
+		A2302069264E746500913A50 /* CollectionPrettyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2302067264E746500913A50 /* CollectionPrettyCell.swift */; };
+		A230206A264E746500913A50 /* CollectionPrettyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2302068264E746500913A50 /* CollectionPrettyCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +53,13 @@
 		A2302055264A858F00913A50 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		A2302057264CD00700913A50 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		A2302059264CD2C600913A50 /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		A230205B264E48A000913A50 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		A230205D264E606600913A50 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		A230205E264E606600913A50 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
+		A2302063264E6CE500913A50 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		A2302064264E6CE500913A50 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		A2302067264E746500913A50 /* CollectionPrettyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPrettyCell.swift; sourceTree = "<group>"; };
+		A2302068264E746500913A50 /* CollectionPrettyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionPrettyCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +199,10 @@
 			children = (
 				A2302053264A836900913A50 /* PageTitleView.swift */,
 				A2302057264CD00700913A50 /* PageContentView.swift */,
+				A2302063264E6CE500913A50 /* CollectionViewCell.swift */,
+				A2302064264E6CE500913A50 /* CollectionViewCell.xib */,
+				A2302067264E746500913A50 /* CollectionPrettyCell.swift */,
+				A2302068264E746500913A50 /* CollectionPrettyCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +217,8 @@
 		A2302041264A1C1000913A50 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A230205D264E606600913A50 /* CollectionHeaderView.swift */,
+				A230205E264E606600913A50 /* CollectionHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +228,7 @@
 			children = (
 				A230203B264A19C300913A50 /* Home.storyboard */,
 				A230204E264A1D4D00913A50 /* HomeViewController.swift */,
+				A230205B264E48A000913A50 /* RecommendViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,10 +363,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A23020172648D09600913A50 /* LaunchScreen.storyboard in Resources */,
+				A2302060264E606700913A50 /* CollectionHeaderView.xib in Resources */,
 				A23020142648D09600913A50 /* Assets.xcassets in Resources */,
 				A2302030264A147600913A50 /* Live.storyboard in Resources */,
+				A2302066264E6CE500913A50 /* CollectionViewCell.xib in Resources */,
 				A23020122648D09200913A50 /* Main.storyboard in Resources */,
 				A2302036264A15AF00913A50 /* Profile.storyboard in Resources */,
+				A230206A264E746500913A50 /* CollectionPrettyCell.xib in Resources */,
 				A2302033264A155A00913A50 /* Follow.storyboard in Resources */,
 				A230203C264A19C400913A50 /* Home.storyboard in Resources */,
 			);
@@ -364,10 +388,14 @@
 				A230204F264A1D4D00913A50 /* HomeViewController.swift in Sources */,
 				A2302054264A836900913A50 /* PageTitleView.swift in Sources */,
 				A230200F2648D09200913A50 /* ViewController.swift in Sources */,
+				A2302065264E6CE500913A50 /* CollectionViewCell.swift in Sources */,
 				A2302052264A5B6500913A50 /* UIBarButtonItem-Extension.swift in Sources */,
 				A230200B2648D09200913A50 /* AppDelegate.swift in Sources */,
 				A230200D2648D09200913A50 /* SceneDelegate.swift in Sources */,
+				A230205F264E606700913A50 /* CollectionHeaderView.swift in Sources */,
 				A230204D264A1CA800913A50 /* MainViewController.swift in Sources */,
+				A230205C264E48A000913A50 /* RecommendViewController.swift in Sources */,
+				A2302069264E746500913A50 /* CollectionPrettyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
