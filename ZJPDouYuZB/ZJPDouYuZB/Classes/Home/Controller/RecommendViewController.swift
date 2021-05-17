@@ -20,10 +20,10 @@ private let kPrettyCellId = "kPrettyCellId"
 private let kHeaderViewId = "kHeaderViewId"
 
 
-
 class RecommendViewController: UIViewController {
 
 	//MARK:懒加载
+	private lazy var recommendVM:RecommendViewModel = RecommendViewModel()
 	private lazy var collectionView:UICollectionView = { [unowned self] in
 
 		let layout = UICollectionViewFlowLayout()
@@ -50,8 +50,11 @@ class RecommendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		setupUI()
+		//网络请求
+		loadData()
 
-        setupUI()
+
     }
     
 
@@ -59,9 +62,18 @@ class RecommendViewController: UIViewController {
 
 }
 
+
+//MARK:设置UI
 extension RecommendViewController {
 	private func setupUI() {
 		view.addSubview(collectionView)
+	}
+}
+
+//MARK:网络请求
+extension RecommendViewController {
+	private func loadData() {
+		recommendVM.requestData()
 	}
 }
 

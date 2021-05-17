@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		847225B58D568CEBD3FF2FD5 /* Pods_ZJPDouYuZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E4A2B87EBBFD678BDCD906 /* Pods_ZJPDouYuZB.framework */; };
+		A227D6DB26520DCC001CD0BF /* JPNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A227D6DA26520DCC001CD0BF /* JPNetworkTools.swift */; };
+		A227D6DE26524C93001CD0BF /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A227D6DD26524C93001CD0BF /* RecommendViewModel.swift */; };
+		A227D6E026524F84001CD0BF /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A227D6DF26524F84001CD0BF /* NSDate-Extension.swift */; };
 		A230200B2648D09200913A50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230200A2648D09200913A50 /* AppDelegate.swift */; };
 		A230200D2648D09200913A50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230200C2648D09200913A50 /* SceneDelegate.swift */; };
 		A230200F2648D09200913A50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230200E2648D09200913A50 /* ViewController.swift */; };
@@ -34,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A227D6DA26520DCC001CD0BF /* JPNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPNetworkTools.swift; sourceTree = "<group>"; };
+		A227D6DD26524C93001CD0BF /* RecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
+		A227D6DF26524F84001CD0BF /* NSDate-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		A23020072648D09200913A50 /* ZJPDouYuZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJPDouYuZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A230200A2648D09200913A50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A230200C2648D09200913A50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +67,9 @@
 		A2302064264E6CE500913A50 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		A2302067264E746500913A50 /* CollectionPrettyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPrettyCell.swift; sourceTree = "<group>"; };
 		A2302068264E746500913A50 /* CollectionPrettyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionPrettyCell.xib; sourceTree = "<group>"; };
+		C0E4A2B87EBBFD678BDCD906 /* Pods_ZJPDouYuZB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZJPDouYuZB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAA2CA93453B9E0D00C6843C /* Pods-ZJPDouYuZB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJPDouYuZB.debug.xcconfig"; path = "Target Support Files/Pods-ZJPDouYuZB/Pods-ZJPDouYuZB.debug.xcconfig"; sourceTree = "<group>"; };
+		FC4CE81E54E2B519A47DFEF1 /* Pods-ZJPDouYuZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJPDouYuZB.release.xcconfig"; path = "Target Support Files/Pods-ZJPDouYuZB/Pods-ZJPDouYuZB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,17 +77,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847225B58D568CEBD3FF2FD5 /* Pods_ZJPDouYuZB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A227D6DC26524C66001CD0BF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A227D6DD26524C93001CD0BF /* RecommendViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A2301FFE2648D09200913A50 = {
 			isa = PBXGroup;
 			children = (
 				A23020092648D09200913A50 /* ZJPDouYuZB */,
 				A23020082648D09200913A50 /* Products */,
+				AA99FE7D7BFEA91725F68B7D /* Pods */,
+				B579399DF98607FD6C2DC040 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +140,7 @@
 		A230201F264912FE00913A50 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A227D6DC26524C66001CD0BF /* ViewModel */,
 				A2302042264A1C1000913A50 /* Controller */,
 				A2302040264A1C1000913A50 /* Model */,
 				A2302041264A1C1000913A50 /* View */,
@@ -130,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				A2302050264A5B0500913A50 /* Extension */,
+				A227D6DA26520DCC001CD0BF /* JPNetworkTools.swift */,
 				A2302055264A858F00913A50 /* Common.swift */,
 			);
 			path = Tools;
@@ -301,8 +324,26 @@
 			children = (
 				A2302051264A5B6500913A50 /* UIBarButtonItem-Extension.swift */,
 				A2302059264CD2C600913A50 /* UIColor-Extension.swift */,
+				A227D6DF26524F84001CD0BF /* NSDate-Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		AA99FE7D7BFEA91725F68B7D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAA2CA93453B9E0D00C6843C /* Pods-ZJPDouYuZB.debug.xcconfig */,
+				FC4CE81E54E2B519A47DFEF1 /* Pods-ZJPDouYuZB.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B579399DF98607FD6C2DC040 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0E4A2B87EBBFD678BDCD906 /* Pods_ZJPDouYuZB.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,9 +353,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A230201B2648D09600913A50 /* Build configuration list for PBXNativeTarget "ZJPDouYuZB" */;
 			buildPhases = (
+				EDD5AA70E050778684E52DAC /* [CP] Check Pods Manifest.lock */,
 				A23020032648D09200913A50 /* Sources */,
 				A23020042648D09200913A50 /* Frameworks */,
 				A23020052648D09200913A50 /* Resources */,
+				94D34222512E77C3EB7A1D2F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,6 +420,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		94D34222512E77C3EB7A1D2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZJPDouYuZB/Pods-ZJPDouYuZB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZJPDouYuZB/Pods-ZJPDouYuZB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZJPDouYuZB/Pods-ZJPDouYuZB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDD5AA70E050778684E52DAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZJPDouYuZB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A23020032648D09200913A50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -385,11 +470,14 @@
 				A2302056264A858F00913A50 /* Common.swift in Sources */,
 				A230205A264CD2C600913A50 /* UIColor-Extension.swift in Sources */,
 				A2302058264CD00700913A50 /* PageContentView.swift in Sources */,
+				A227D6DB26520DCC001CD0BF /* JPNetworkTools.swift in Sources */,
 				A230204F264A1D4D00913A50 /* HomeViewController.swift in Sources */,
 				A2302054264A836900913A50 /* PageTitleView.swift in Sources */,
 				A230200F2648D09200913A50 /* ViewController.swift in Sources */,
 				A2302065264E6CE500913A50 /* CollectionViewCell.swift in Sources */,
+				A227D6E026524F84001CD0BF /* NSDate-Extension.swift in Sources */,
 				A2302052264A5B6500913A50 /* UIBarButtonItem-Extension.swift in Sources */,
+				A227D6DE26524C93001CD0BF /* RecommendViewModel.swift in Sources */,
 				A230200B2648D09200913A50 /* AppDelegate.swift in Sources */,
 				A230200D2648D09200913A50 /* SceneDelegate.swift in Sources */,
 				A230205F264E606700913A50 /* CollectionHeaderView.swift in Sources */,
@@ -555,6 +643,7 @@
 		};
 		A230201C2648D09600913A50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAA2CA93453B9E0D00C6843C /* Pods-ZJPDouYuZB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -574,6 +663,7 @@
 		};
 		A230201D2648D09600913A50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC4CE81E54E2B519A47DFEF1 /* Pods-ZJPDouYuZB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
