@@ -10,5 +10,6 @@ target 'ZJPDouYuZB' do
   # Pods for ZJPDouYuZB
 
 pod 'Alamofire','~> 5.4.3'
-
+pod 'HandyJSON', '~> 5.0.2'
+pod 'Kingfisher', '~> 6.3.0'
 end

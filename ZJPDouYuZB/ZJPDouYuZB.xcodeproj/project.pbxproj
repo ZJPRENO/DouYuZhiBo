@@ -11,6 +11,7 @@
 		A227D6DB26520DCC001CD0BF /* JPNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A227D6DA26520DCC001CD0BF /* JPNetworkTools.swift */; };
 		A227D6DE26524C93001CD0BF /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A227D6DD26524C93001CD0BF /* RecommendViewModel.swift */; };
 		A227D6E026524F84001CD0BF /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A227D6DF26524F84001CD0BF /* NSDate-Extension.swift */; };
+		A227D6E226525D2B001CD0BF /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A227D6E126525D2B001CD0BF /* AnchorGroup.swift */; };
 		A230200B2648D09200913A50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230200A2648D09200913A50 /* AppDelegate.swift */; };
 		A230200D2648D09200913A50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230200C2648D09200913A50 /* SceneDelegate.swift */; };
 		A230200F2648D09200913A50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230200E2648D09200913A50 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		A227D6DA26520DCC001CD0BF /* JPNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPNetworkTools.swift; sourceTree = "<group>"; };
 		A227D6DD26524C93001CD0BF /* RecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
 		A227D6DF26524F84001CD0BF /* NSDate-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
+		A227D6E126525D2B001CD0BF /* AnchorGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
 		A23020072648D09200913A50 /* ZJPDouYuZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJPDouYuZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A230200A2648D09200913A50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A230200C2648D09200913A50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,9 +142,9 @@
 		A230201F264912FE00913A50 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A2302040264A1C1000913A50 /* Model */,
 				A227D6DC26524C66001CD0BF /* ViewModel */,
 				A2302042264A1C1000913A50 /* Controller */,
-				A2302040264A1C1000913A50 /* Model */,
 				A2302041264A1C1000913A50 /* View */,
 			);
 			path = Home;
@@ -233,6 +235,7 @@
 		A2302040264A1C1000913A50 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A227D6E126525D2B001CD0BF /* AnchorGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				A227D6DB26520DCC001CD0BF /* JPNetworkTools.swift in Sources */,
 				A230204F264A1D4D00913A50 /* HomeViewController.swift in Sources */,
 				A2302054264A836900913A50 /* PageTitleView.swift in Sources */,
+				A227D6E226525D2B001CD0BF /* AnchorGroup.swift in Sources */,
 				A230200F2648D09200913A50 /* ViewController.swift in Sources */,
 				A2302065264E6CE500913A50 /* CollectionViewCell.swift in Sources */,
 				A227D6E026524F84001CD0BF /* NSDate-Extension.swift in Sources */,

@@ -73,7 +73,9 @@ extension RecommendViewController {
 //MARK:网络请求
 extension RecommendViewController {
 	private func loadData() {
-		recommendVM.requestData()
+		recommendVM.requestData { [self] in
+			collectionView.reloadData()
+		}
 	}
 }
 
@@ -82,30 +84,37 @@ extension RecommendViewController:UICollectionViewDataSource , UICollectionViewD
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-		var cell:UICollectionViewCell
+		let group = recommendVM.anchorGroups[indexPath.section]
+		let anchor = group.room_list![indexPath.item]
+
 		if indexPath.section == 1 {
-			cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellId, for: indexPath)
+			let prettyCell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellId, for: indexPath) as! CollectionPrettyCell
+			prettyCell.anchor = anchor
+			return prettyCell
 		}else {
-			cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellId, for: indexPath)
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellId, for: indexPath) as! CollectionViewCell
+			cell.anchor = anchor
+			return cell
 		}
 //		cell.backgroundColor = .red
-		return cell
+
 	}
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		if section == 0 {
-			 return 8
-		} else {
-			 return 4
-		}
+		let group = recommendVM.anchorGroups[section]
+		return group.room_list!.count
+
 	}
 
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
-		 return 12
+		return recommendVM.anchorGroups.count
 	}
 
 	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-		let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewId, for: indexPath)
+		let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewId, for: indexPath) as! CollectionHeaderView
+
+		headerView.group = recommendVM.anchorGroups[indexPath.row]
+
 		return headerView
 
 	}

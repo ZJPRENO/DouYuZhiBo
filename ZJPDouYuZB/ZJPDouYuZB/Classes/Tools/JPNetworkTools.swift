@@ -10,9 +10,10 @@ import Foundation
 import Alamofire
 
 typealias finishedCallback = (_ result:AnyObject)->(Void)
+typealias failureCallback  = (_ failure:AnyObject)->(Void)
 
 class NetWork {
-	class func requestData(type:HTTPMethod, URLString:String,parameters:[String:String]?=nil, success: @escaping finishedCallback) {
+	class func requestData(type:HTTPMethod, URLString:String,parameters:[String:String]?=nil, success: @escaping finishedCallback,failure:@escaping failureCallback ) {
 
 		AF.request(URL(string: URLString)!, method: type, parameters: parameters).responseString { (responses) in
 
@@ -29,8 +30,8 @@ class NetWork {
 				success(resultDic)
 			case .failure:
 				//let statusCode = responses.response?.statusCode
-				debugPrint(responses.error ?? "" )
-
+				debugPrint(responses.error ?? "请求失败" )
+				failure(responses.error as AnyObject)
 			}
 		}
 

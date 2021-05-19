@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="CollectionHeaderView" customModule="ZJPDouYuZB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
@@ -31,7 +31,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anp-iC-nuz">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anp-iC-nuz" userLabel="更多 &gt;">
                     <rect key="frame" x="258" y="16" width="60" height="28"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="hYR-2D-1bi"/>
@@ -54,7 +54,11 @@
                 <constraint firstAttribute="trailing" secondItem="anp-iC-nuz" secondAttribute="trailing" constant="2" id="dbb-2c-Oot"/>
                 <constraint firstItem="0Em-hi-UUf" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="mZB-Yt-OMa"/>
             </constraints>
-            <point key="canvasLocation" x="137.68115942028987" y="28.794642857142854"/>
+            <connections>
+                <outlet property="iconIView" destination="0Em-hi-UUf" id="aut-EB-pfM"/>
+                <outlet property="titleLb" destination="rIo-B3-be6" id="HeA-qx-wsX"/>
+            </connections>
+            <point key="canvasLocation" x="157" y="-52"/>
         </collectionReusableView>
     </objects>
     <resources>

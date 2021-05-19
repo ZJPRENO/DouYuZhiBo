@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="ZJPDouYuZB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="142" height="124"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -70,6 +70,12 @@
                 <constraint firstItem="Km3-8t-fqu" firstAttribute="top" secondItem="2l1-eF-Tbe" secondAttribute="bottom" constant="5" id="nLb-Cy-VYi"/>
             </constraints>
             <size key="customSize" width="142" height="124"/>
+            <connections>
+                <outlet property="imageV" destination="VFu-hb-8i9" id="wwc-bw-US9"/>
+                <outlet property="nickNameLb" destination="2l1-eF-Tbe" id="wTt-UH-jSX"/>
+                <outlet property="onlineBtn" destination="e5O-ji-0ks" id="N6m-bt-tXq"/>
+                <outlet property="roomNameLb" destination="Km3-8t-fqu" id="aVV-Mr-a23"/>
+            </connections>
             <point key="canvasLocation" x="149.27536231884059" y="31.473214285714285"/>
         </collectionViewCell>
     </objects>
