@@ -34,7 +34,7 @@ class CollectionBaseCell: UICollectionViewCell {
 
 			//			KF.url(iconUrl as URL).set(to: iconImg)
 
-			KF.url(iconUrl as URL).transition(.fade(0.4)).set(to: imageV)
+			KF.url(iconUrl as URL).transition(.fade(0.4)).placeholder(UIImage(named: "live_cell_default_phone")).set(to: imageV)
 		}
 	}
 }

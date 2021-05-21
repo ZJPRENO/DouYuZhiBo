@@ -28,6 +28,8 @@ struct AnchorGroupModel : HandyJSON {
 	var room_list: [RoomListModel]?
 	var icon:String = "home_header_phone"
 	var small_icon_url:String? = "home_header_phone"
+	var icon_url:String = ""
+
 
 }
 

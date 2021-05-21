@@ -7,6 +7,7 @@
 
 import UIKit
 import HandyJSON
+
 class RecommendViewModel {
 	//MARK:懒加载
 	lazy var anchorGroups:[AnchorGroupModel] = [AnchorGroupModel]()
@@ -116,12 +117,12 @@ extension RecommendViewModel {
 	}
 
 	func requestCycleData(finishCallback:@escaping ()->()) {
-		let cycleUrl = "http://www.douyutv.com/api/v1/slide/6"
-		let cycleParameters:[String:String] = ["version":"2.300"]
 
+		let cycleUrl = "http://www.douyutv.com/api/v1/slide/6"
+		let cycleParameters:[String:String] = ["version":"2.300","time":NSDate.getCurrentTime()]
 
 		NetWork.requestData(type: .get, URLString: cycleUrl, parameters: cycleParameters) { [self] result in
-//			print("cycleUrl:\(result)")
+			print("cycleUrl:\(result)")
 			guard let str = result as? String,
 					let jsonData = str.data(using: .utf8),
 					let resp = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as? [String : Any] else {
@@ -134,11 +135,11 @@ extension RecommendViewModel {
 				 return
 			}
 			cycleModels = models
-//			print("cycleUrl:\(result)")
+			print("cycleUrl:\(result)")
 			finishCallback()
 			
 		} failure: { error in
-
+			print("error:\(error)")
 		}
 
 	}

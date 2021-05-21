@@ -15,12 +15,13 @@ class CollectionCycleCell: UICollectionViewCell {
 	@IBOutlet weak var titleLb: UILabel!
 
 	@IBOutlet weak var titleView: UIView!
+	
 	var cycleModels:CycleModel? {
 		
 		didSet {
 			guard let data = cycleModels else {return}
 			titleLb.text = data.title
-			KF.url(URL(string: data.pic_url)).fade(duration: 0.3).set(to: imageView)
+			KF.url(URL(string: data.pic_url)).fade(duration: 0.3).placeholder(UIImage(named: "Img_default")).set(to: imageView)
 
 			
 		}
