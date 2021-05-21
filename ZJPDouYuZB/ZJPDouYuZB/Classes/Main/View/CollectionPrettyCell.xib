@@ -43,7 +43,7 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LO-h4-CQ3">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LO-h4-CQ3">
                         <rect key="frame" x="105" y="5" width="60" height="25"/>
                         <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
                         <constraints>
@@ -81,7 +81,7 @@
             <size key="customSize" width="170" height="139"/>
             <connections>
                 <outlet property="cityBtn" destination="Qs4-bL-VC5" id="esr-S2-eJH"/>
-                <outlet property="iconImg" destination="g7J-pf-6NO" id="JHg-6x-ZMz"/>
+                <outlet property="imageV" destination="g7J-pf-6NO" id="dah-xh-Dt6"/>
                 <outlet property="nickNameLb" destination="i1z-EN-26p" id="v3x-Vf-Dr7"/>
                 <outlet property="onlineBtn" destination="9LO-h4-CQ3" id="awt-d3-Cfp"/>
             </connections>

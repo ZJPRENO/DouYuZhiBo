@@ -19,7 +19,6 @@ struct RoomListModel: HandyJSON {
 	var isVertical:Int?//0 直播 手机直播
 	var anchor_city:String? ///所在城市
 
-
 }
 
 struct AnchorGroupModel : HandyJSON {
@@ -27,16 +26,22 @@ struct AnchorGroupModel : HandyJSON {
 	var tag_name: String?
 	var tag_id: String?
 	var room_list: [RoomListModel]?
-	var icon:String?
-
+	var icon:String = "home_header_phone"
+	var small_icon_url:String? = "home_header_phone"
 
 }
 
-//class AnchorGroup : HandyJSON {
-//	/// 房间信息
-//	var room_list: [[String:NSObject]]?
-//	var tag_name:String = ""
-//	var icon_name: String = "home_header_normal"
+//struct CycleModel : HandyJSON {
+//	/// 标题
+//	var title:String?
+//	var pic_url:String = ""
+//	var room:RoomListModel?
 //
-//	required init() {}
 //}
+class CycleModel : HandyJSON {
+	/// 标题
+	var title:String = ""
+	var pic_url:String = ""
+	var room:RoomListModel?
+	required init() {}
+}

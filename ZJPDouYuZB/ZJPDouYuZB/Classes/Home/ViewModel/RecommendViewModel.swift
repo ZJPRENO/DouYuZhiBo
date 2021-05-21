@@ -12,6 +12,7 @@ class RecommendViewModel {
 	lazy var anchorGroups:[AnchorGroupModel] = [AnchorGroupModel]()
 	private lazy var bigDataGroup:AnchorGroupModel = AnchorGroupModel()
 	private lazy var prettyGroup:AnchorGroupModel = AnchorGroupModel()
+	lazy var cycleModels:[CycleModel] = [CycleModel]()
 
 }
 
@@ -44,7 +45,7 @@ extension RecommendViewModel {
 			bigDataGroup.tag_name = "热门"
 			bigDataGroup.icon = "home_header_hot"
 			bigDataGroup.room_list = anchor
-			print(bigDataGroup)
+//			print(bigDataGroup)
 			print("请求成功")
 			dispatchG.leave()
 
@@ -70,7 +71,7 @@ extension RecommendViewModel {
 			prettyGroup.tag_name = "颜值"
 			prettyGroup.icon = "home_header_phone"
 			prettyGroup.room_list = anchor
-			print(prettyGroup)
+//			print(prettyGroup)
 			print("请求成功")
 			dispatchG.leave()
 
@@ -94,7 +95,7 @@ extension RecommendViewModel {
 				 return
 			}
 			self.anchorGroups = anchor
-			print(anchorGroups)
+//			print(anchorGroups)
 			print("请求成功")
 			dispatchG.leave()
 
@@ -111,6 +112,34 @@ extension RecommendViewModel {
 			print("end")
 		}
 
+
+	}
+
+	func requestCycleData(finishCallback:@escaping ()->()) {
+		let cycleUrl = "http://www.douyutv.com/api/v1/slide/6"
+		let cycleParameters:[String:String] = ["version":"2.300"]
+
+
+		NetWork.requestData(type: .get, URLString: cycleUrl, parameters: cycleParameters) { [self] result in
+//			print("cycleUrl:\(result)")
+			guard let str = result as? String,
+					let jsonData = str.data(using: .utf8),
+					let resp = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as? [String : Any] else {
+				 return
+			}
+
+			guard let dictArr = resp["data"] as? [[String : Any]],
+					let models = [CycleModel].deserialize(from: dictArr) as? [CycleModel] else {
+				 print("解析失败")
+				 return
+			}
+			cycleModels = models
+//			print("cycleUrl:\(result)")
+			finishCallback()
+			
+		} failure: { error in
+
+		}
 
 	}
 }

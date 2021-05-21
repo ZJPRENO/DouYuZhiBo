@@ -13,6 +13,7 @@ private let kHeaderViewH:CGFloat = 50.0
 private let kItemW = (kScreenW - 3 * kItemMargin) / 2
 private let kNormalItemH = kItemW * 3 / 4
 private let kPrettyItemH = kItemW * 5 / 4
+private let kCycleViewH = kScreenW * 3 / 8
 
 private let kNormalCellId = "kNormalCellId"
 private let kPrettyCellId = "kPrettyCellId"
@@ -36,6 +37,7 @@ class RecommendViewController: UIViewController {
 		let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
 		collectionView.backgroundColor = .white
 		collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth]//随着父视图伸缩
+		collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)//设置内边距
 		collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellId)
 		collectionView.register(UINib(nibName: "CollectionPrettyCell", bundle: nil), forCellWithReuseIdentifier: kPrettyCellId)
 
@@ -46,6 +48,11 @@ class RecommendViewController: UIViewController {
 		collectionView.delegate = self
 		return collectionView
 	}()
+	private lazy var cycleView:RecommendCycleView = {
+		let cycleView = RecommendCycleView.recommendCycleView()
+		cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH)
+		return cycleView
+	}()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +61,7 @@ class RecommendViewController: UIViewController {
 		//网络请求
 		loadData()
 
-
     }
-    
-
 
 
 }
@@ -67,14 +71,23 @@ class RecommendViewController: UIViewController {
 extension RecommendViewController {
 	private func setupUI() {
 		view.addSubview(collectionView)
+		collectionView.addSubview(cycleView)
+
 	}
 }
 
 //MARK:网络请求
 extension RecommendViewController {
 	private func loadData() {
+
+		//
 		recommendVM.requestData { [self] in
 			collectionView.reloadData()
+		}
+		//
+		recommendVM.requestCycleData { [self] in
+			cycleView.cycleModels = recommendVM.cycleModels
+			
 		}
 	}
 }
@@ -113,7 +126,7 @@ extension RecommendViewController:UICollectionViewDataSource , UICollectionViewD
 	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 		let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewId, for: indexPath) as! CollectionHeaderView
 
-		headerView.group = recommendVM.anchorGroups[indexPath.row]
+		headerView.group = recommendVM.anchorGroups[indexPath.section]
 
 		return headerView
 

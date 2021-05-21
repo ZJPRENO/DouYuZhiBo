@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecommendCycleView" customModule="ZJPDouYuZB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4r6-Ta-CAW">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tvd-8o-uaB">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="YUe-HA-Ed2"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="Zng-9o-6Fy"/>
+                    </connections>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hT5-r8-c29">
+                    <rect key="frame" x="243.5" y="152" width="121.5" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="HS5-t6-9Ix"/>
+                    </constraints>
+                    <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="currentPageIndicatorTintColor" systemColor="systemOrangeColor"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="4r6-Ta-CAW" secondAttribute="bottom" id="54d-x4-rTr"/>
+                <constraint firstAttribute="trailing" secondItem="4r6-Ta-CAW" secondAttribute="trailing" id="625-Ng-JTS"/>
+                <constraint firstItem="4r6-Ta-CAW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BLt-oB-T24"/>
+                <constraint firstAttribute="bottom" secondItem="4r6-Ta-CAW" secondAttribute="bottom" id="COa-e9-iWb"/>
+                <constraint firstItem="4r6-Ta-CAW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mfe-Bg-V1y"/>
+                <constraint firstItem="4r6-Ta-CAW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Voq-NF-tOc"/>
+                <constraint firstAttribute="bottom" secondItem="hT5-r8-c29" secondAttribute="bottom" id="byd-wH-Nwv"/>
+                <constraint firstAttribute="trailing" secondItem="4r6-Ta-CAW" secondAttribute="trailing" id="fGO-1f-QxP"/>
+                <constraint firstItem="4r6-Ta-CAW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gB1-go-Fln"/>
+                <constraint firstAttribute="trailing" secondItem="hT5-r8-c29" secondAttribute="trailing" constant="10" id="sai-wb-Vqx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="4r6-Ta-CAW" id="Vmg-De-Rer"/>
+                <outlet property="pageControl" destination="hT5-r8-c29" id="Tn4-mw-5pW"/>
+            </connections>
+            <point key="canvasLocation" x="114" y="-171"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
